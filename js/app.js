@@ -1,26 +1,24 @@
 $(function() {
-  //checkbox z wysylanie wiadomosci section4
-  var validateName =$(".validate_error_name");
-  var validateEmail = $(".validate_error_email");
-  var validatePhone = $(".validate_error_phone");
-  var validateMessage = $(".validate_error_message");
-  var nameForm = $('#name');
-  var emailForm = $("#email");
-  var phoneNumber =$("#phoneNumber");
-  var messageForm = $("#message");
-  var buttonSend=$("#buttonSend");
-
+  /*validation Email*/
+  let validateName =$(".validate_error_name");
+  let validateEmail = $(".validate_error_email");
+  let validatePhone = $(".validate_error_phone");
+  let validateMessage = $(".validate_error_message");
+  let nameForm = $('#name');
+  let emailForm = $("#email");
+  let phoneNumber =$("#phoneNumber");
+  let messageForm = $("#message");
+  let buttonSend=$("#buttonSend");
 
   validateName.hide();
   validateEmail.hide();
   validatePhone.hide();
   validateMessage.hide();
 
-
-  var error_name = false;
-  var error_email = false;
-  var error_phone = false;
-  var error_message = false;
+  let error_name = false;
+  let error_email = false;
+  let error_phone = false;
+  let error_message = false;
 
   nameForm.focusout(function(){
     check_name();
@@ -36,7 +34,7 @@ $(function() {
   })
 
   function check_name(){
-    var name_length = nameForm.val().length;
+    let name_length = nameForm.val().length;
     if(name_length<5 || name_length>20)
     {
       validateName.html("Should be between 5-20 characters");
@@ -61,7 +59,7 @@ $(function() {
   }
 
   function check_phone(){
-    var phone_length = phoneNumber.val().length;
+    let phone_length = phoneNumber.val().length;
     if(phone_length<9 || phone_length>13)
     {
       validatePhone.html("Should be between 9-13 characters");
@@ -74,7 +72,7 @@ $(function() {
   }
 
   function check_message(){
-    var message_length=messageForm.val().length;
+    let message_length=messageForm.val().length;
     if(message_length<10 || message_length>60)
     {
       validateMessage.html("Should be between 10-60 characters");
